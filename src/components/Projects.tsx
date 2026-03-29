@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const Projects: React.FC = () => {
   const projects = [
     {
-      title: "筑基篇 · PC 秀秀 7.0 全版本重构",
+      title: "111筑基篇 · PC 秀秀 7.0 全版本重构",
       background: "6.0版本收入瓶颈，老用户习惯强，框架无法支撑新功能",
       thinking: "重构产品框架，分工统筹，用户安抚与数据监控",
       metrics: [

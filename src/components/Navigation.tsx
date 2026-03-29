@@ -10,6 +10,8 @@ interface NavItem {
 const Navigation: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('about');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // 【新增】滚动状态控制
+  const [scrolled, setScrolled] = useState(false);
 
   const navItems: NavItem[] = [
     { label: '关于我', targetId: 'about', shortLabel: '关于' },
@@ -34,6 +36,9 @@ const Navigation: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // 【新增】监听滚动距离，控制遮罩显示
+      setScrolled(window.scrollY > 50);
+
       const scrollPosition = window.scrollY + 120;
       for (const item of navItems) {
         const element = document.getElementById(item.targetId);
@@ -66,29 +71,27 @@ const Navigation: React.FC = () => {
 
   return (
     <>
-      {/* 占位高度减小，帮助首屏上移 */}
+      {/* 占位高度保持不变 */}
       <div className="h-16" />
-      <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
+      {/* 【修改】header根据滚动状态变化背景 */}
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? 'bg-white/80 backdrop-blur-md shadow-sm' : 'bg-transparent'
+      }`}>
         <nav className="px-4 py-2">
-          {/* 桌面端 - 透明背景，多巴胺选中态 */}
+          {/* 桌面端 - 【修改】胶囊外框样式，保留所有原有逻辑 */}
           <div className="hidden md:flex items-center justify-center">
             <div className="flex items-center gap-3 lg:gap-4">
               {navItems.map((item) => (
                 <button
                   key={item.targetId}
                   onClick={() => scrollToSection(item.targetId)}
-                  className={`px-3 py-1 text-sm font-medium transition-all duration-200
-                    ${activeSection === item.targetId
-                      ? 'text-[#FF1493] underline underline-offset-6 decoration-3 decoration-[#FF1493]'
-                      : 'text-gray-800 hover:text-[#FF1493]'
-                    }`}
-                  style={{
-                    backgroundColor: 'transparent',
-                    textDecoration: activeSection === item.targetId
-                      ? 'underline solid #FF1493 3px'
-                      : 'none',
-                    textUnderlineOffset: '6px'
-                  }}
+                  className={`px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 border-2 ${
+                    activeSection === item.targetId
+                      ? 'bg-[#FF1493] text-white border-[#FF1493] shadow-md' // 激活项：粉色胶囊底色
+                      : scrolled
+                      ? 'bg-transparent text-gray-700 border-gray-300 hover:border-[#FF1493] hover:text-[#FF1493]' // 下滑时：透明底+灰边框
+                      : 'bg-transparent text-gray-800 border-transparent hover:border-gray-300' // 首屏时：完全透明
+                  }`}
                 >
                   {item.label}
                 </button>
@@ -96,7 +99,7 @@ const Navigation: React.FC = () => {
             </div>
           </div>
 
-          {/* 移动端保持不变 */}
+          {/* 移动端保持完全不变 */}
           <div className="md:hidden">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="w-full flex items-center justify-between px-3 py-2 bg-white border-2 border-black rounded-lg shadow-[2px_2px_0_#000]">
               <div className="flex items-center gap-2">

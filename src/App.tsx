@@ -11,14 +11,15 @@ function App() {
     // 添加全局样式
     const style = document.createElement('style');
     style.textContent = `
-      /* 可爱多巴胺鼠标光标 */
+      /* 默认鼠标 - 粉色食指指向前方（真正的小手！） */
       body {
-        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath d='M10 2l2.5 5l5.5 1l-4 3.5l1 5.5l-5-2.5l-5 2.5l1-5.5l-4-3.5l5.5-1z' fill='%23FFD700' stroke='%23000' stroke-width='1.5'/%3E%3C/svg%3E") 10 10, auto;
+        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M10 2 C9 2 8 3 8 4 L8 14 L6 14 C5 14 4 15 4 16 C4 17 5 18 6 18 L8 18 L8 22 C8 23 9 24 10 24 L16 24 C17 24 18 23 18 22 L18 16 L20 16 C21 16 22 15 22 14 C22 13 21 12 20 12 L18 12 L18 10 C18 9 17 8 16 8 L14 8 L14 4 C14 3 13 2 12 2 Z' fill='%23FF69B4' stroke='%23000' stroke-width='1.5'/%3E%3C/svg%3E") 4 0, auto;
       }
 
-      /* 可爱点击态光标 - 卡通小手 */
-      a, button, img, [role="button"], .cursor-pointer, .fade-in-up, .clickable {
-        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg transform='translate(0,24) scale(0.1,-0.1)'%3E%3Cpath d='M85 184C60 178 39 161 32 142 25 120 26 118 55 71 83 24 85 20 85 0 85-20 83-24 55-71 26-118 25-120 32-142 39-161 60-178 85-184 95-186 115-186 125-184 150-178 171-161 178-142 185-120 184-118 155-71 127-24 125-20 125 0 125 20 127 24 155 71 184 118 185 120 178 142 171 161 150 178 125 184 115 186 95 186 85 184Z' fill='%23FF1493' stroke='%23000' stroke-width='10'/%3E%3C/g%3E%3C/svg%3E") 12 12, pointer;
+      /* Hover鼠标 - 金色食指指向前方（真正的小手！） */
+      a, button, img, [role="button"], .cursor-pointer, .fade-in-up, .clickable,
+      .bg-gray-50, .rounded-lg, .motion-div, .border-2, .shadow-lg {
+        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M10 2 C9 2 8 3 8 4 L8 14 L6 14 C5 14 4 15 4 16 C4 17 5 18 6 18 L8 18 L8 22 C8 23 9 24 10 24 L16 24 C17 24 18 23 18 22 L18 16 L20 16 C21 16 22 15 22 14 C22 13 21 12 20 12 L18 12 L18 10 C18 9 17 8 16 8 L14 8 L14 4 C14 3 13 2 12 2 Z' fill='%23FFD700' stroke='%23000' stroke-width='1.5'/%3E%3C/svg%3E") 4 0, pointer;
       }
 
       html {
