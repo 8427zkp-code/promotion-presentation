@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Hero from './components/Hero';
 import Responsibilities from './components/Responsibilities';
 import CoreAchievements from './components/CoreAchievements';
