@@ -16,9 +16,9 @@ function App() {
         cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath d='M10 2l2.5 5l5.5 1l-4 3.5l1 5.5l-5-2.5l-5 2.5l1-5.5l-4-3.5l5.5-1z' fill='%23FFD700' stroke='%23000' stroke-width='1.5'/%3E%3C/svg%3E") 10 10, auto;
       }
 
-      /* 可爱点击态光标 */
-      a, button, img, [role="button"], .cursor-pointer, .fade-in-up {
-        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 20 20'%3E%3Cpath d='M8 2L5 8l-6 1 4.5 4-1 6 5.5-3 5.5 3-1-6 4.5-4-6-1z' fill='%23FF6B6B' stroke='%23000' stroke-width='1.5'/%3E%3C/svg%3E") 11 11, pointer;
+      /* 可爱点击态光标 - 卡通小手 */
+      a, button, img, [role="button"], .cursor-pointer, .fade-in-up, .clickable {
+        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg transform='translate(0,24) scale(0.1,-0.1)'%3E%3Cpath d='M85 184C60 178 39 161 32 142 25 120 26 118 55 71 83 24 85 20 85 0 85-20 83-24 55-71 26-118 25-120 32-142 39-161 60-178 85-184 95-186 115-186 125-184 150-178 171-161 178-142 185-120 184-118 155-71 127-24 125-20 125 0 125 20 127 24 155 71 184 118 185 120 178 142 171 161 150 178 125 184 115 186 95 186 85 184Z' fill='%23FF1493' stroke='%23000' stroke-width='10'/%3E%3C/g%3E%3C/svg%3E") 12 12, pointer;
       }
 
       html {

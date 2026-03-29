@@ -70,24 +70,29 @@ const Navigation: React.FC = () => {
       <div className="h-16" />
       <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
         <nav className="px-4 py-2">
-          {/* 桌面端 - 胶囊框样式，无分割线 */}
+          {/* 桌面端 - 透明背景，多巴胺选中态 */}
           <div className="hidden md:flex items-center justify-center">
-            <div className="bg-white/90 backdrop-blur-sm border-2 border-black rounded-full px-4 py-1.5 shadow-[3px_3px_0px_#000]">
-              <div className="flex items-center gap-3 lg:gap-4">
-                {navItems.map((item) => (
-                  <button
-                    key={item.targetId}
-                    onClick={() => scrollToSection(item.targetId)}
-                    className={`px-3 py-1 text-sm font-medium rounded-full transition-all duration-200
-                      ${activeSection === item.targetId
-                        ? 'bg-orange-500 text-white shadow-sm'
-                        : 'hover:bg-orange-100 text-gray-800'
-                      }`}
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
+            <div className="flex items-center gap-3 lg:gap-4">
+              {navItems.map((item) => (
+                <button
+                  key={item.targetId}
+                  onClick={() => scrollToSection(item.targetId)}
+                  className={`px-3 py-1 text-sm font-medium transition-all duration-200
+                    ${activeSection === item.targetId
+                      ? 'text-[#FF1493] underline underline-offset-6 decoration-3 decoration-[#FF1493]'
+                      : 'text-gray-800 hover:text-[#FF1493]'
+                    }`}
+                  style={{
+                    backgroundColor: 'transparent',
+                    textDecoration: activeSection === item.targetId
+                      ? 'underline solid #FF1493 3px'
+                      : 'none',
+                    textUnderlineOffset: '6px'
+                  }}
+                >
+                  {item.label}
+                </button>
+              ))}
             </div>
           </div>
 

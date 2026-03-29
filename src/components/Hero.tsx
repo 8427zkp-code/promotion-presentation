@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
   return (
-    <section className="min-h-[90vh] flex items-center justify-center px-6 pt-2 pb-8">
+    <section className="min-h-[85vh] flex items-center justify-center px-6 pt-1 pb-4">
       <div className="max-w-6xl mx-auto w-full">
         <div className="grid lg:grid-cols-10 gap-12 items-center">
           {/* 左侧文本区 - 占6/10 */}
@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="space-y-8 max-w-2xl">
+              <div className="space-y-4 md:space-y-6 max-w-2xl">
                 {/* 名字突出显示 - 倾斜多巴胺风格 */}
                 <div className="flex items-end gap-4">
                   <span className="text-3xl md:text-4xl font-black text-black">我是</span>
@@ -35,16 +35,49 @@ const Hero: React.FC = () => {
                   </div>
                 </div>
 
-                {/* 个人信息简介 - 便利贴风格倾斜卡片 */}
-                <div className="flex flex-col sm:flex-row gap-4 mt-6">
-                  <div className="bg-yellow-50 border-2 border-black rounded-lg p-4 transform -rotate-1 shadow-[2px_2px_0px_#000]">
-                    <h3 className="font-bold text-gray-900 mb-1 text-sm">最近绩效:</h3>
-                    <p className="text-gray-700 text-xs">2025年 B+、2024年 B+、2023年 B+</p>
+                {/* 个人信息简介 - 紧凑排列 + 雷达图 */}
+                <div className="flex flex-col lg:flex-row gap-4 mt-6 items-start">
+                  {/* 左侧文字模块 - 上下排列 */}
+                  <div className="flex flex-col gap-3 flex-1">
+                    <div className="bg-yellow-50 border-2 border-black rounded-lg p-3 transform -rotate-1 shadow-[2px_2px_0px_#000]">
+                      <h3 className="font-bold text-gray-900 mb-1 text-sm">最近绩效:</h3>
+                      <p className="text-gray-700 text-xs">2025年 B+、2024年 B+、2023年 B+</p>
+                    </div>
+                    <div className="bg-blue-50 border-2 border-black rounded-lg p-3 transform rotate-1 shadow-[2px_2px_0px_#000]">
+                      <h3 className="font-bold text-gray-900 mb-1 text-sm">个人荣誉:</h3>
+                      <p className="text-gray-700 text-xs">2025年"智能消除"优秀项目代表</p>
+                      <p className="text-gray-700 text-xs">2022年"攻坚突破"优秀个人</p>
+                    </div>
                   </div>
-                  <div className="bg-blue-50 border-2 border-black rounded-lg p-4 transform rotate-2 shadow-[2px_2px_0px_#000]">
-                    <h3 className="font-bold text-gray-900 mb-1 text-sm">个人荣誉:</h3>
-                    <p className="text-gray-700 text-xs">2025年"智能消除"优秀项目代表</p>
-                    <p className="text-gray-700 text-xs">2022年"攻坚突破"优秀个人</p>
+
+                  {/* 右侧雷达图 */}
+                  <div className="flex-shrink-0">
+                    <img
+                      src="/ability.png"
+                      alt="能力雷达图"
+                      className="w-32 h-32 md:w-40 md:h-40 object-contain border-4 border-black rounded-xl shadow-[4px_4px_0px_#000] cursor-pointer hover:shadow-[6px_6px_0px_#000] transition-all duration-200 clickable"
+                      onClick={() => {
+                        const style = document.createElement('style');
+                        style.textContent = `
+                          .lightbox-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 1000; cursor: pointer; }
+                          .lightbox-image { max-width: 90vw; max-height: 90vh; border: 4px solid #000; border-radius: 12px; box-shadow: 8px 8px 0px #000; }
+                        `;
+                        document.head.appendChild(style);
+
+                        const overlay = document.createElement('div');
+                        overlay.className = 'lightbox-overlay';
+                        overlay.onclick = () => overlay.remove();
+
+                        const img = document.createElement('img');
+                        img.src = '/ability.png';
+                        img.alt = '能力雷达图';
+                        img.className = 'lightbox-image';
+                        img.onclick = (e) => e.stopPropagation();
+
+                        overlay.appendChild(img);
+                        document.body.appendChild(overlay);
+                      }}
+                    />
                   </div>
                 </div>
               </div>

@@ -22,10 +22,10 @@ const CoreAchievements: React.FC = () => {
         }
       ],
       results: [
-        { label: "保存率", value: "↑9%", detail: "74%→81%" },
-        { label: "次日留存", value: "↑51%", detail: "30.53%→46.23%" },
-        { label: "订阅率", value: "↑122.5%", detail: "0.34%→0.75%" },
-        { label: "客单价", value: "↑20.6%", detail: "34.56→41.68" }
+        { label: "保存率", value: "74%→81%", detail: "↑9%" },
+        { label: "次日留存", value: "30.53%→46.23%", detail: "↑51%" },
+        { label: "订阅率", value: "0.34%→0.75%", detail: "↑122.5%" },
+        { label: "客单价", value: "34.56→41.68", detail: "↑20.6%" }
       ],
       summary: "聚焦高价值功能到首页、编辑器等一级页面，替代原独立弹窗，用户使用更顺畅。大版本重构需及时跟进用户反馈，避免流失。",
       tags: ["执行力", "项目管理", "方法论建设"],
@@ -51,10 +51,10 @@ const CoreAchievements: React.FC = () => {
         }
       ],
       results: [
-        { label: "功能进入渗透率", value: "↑122%", detail: "9%→20%" },
-        { label: "保存率", value: "↑22%", detail: "45%→55%" },
-        { label: "收入", value: "↑185%", detail: "900万→2566万" },
-        { label: "排名", value: "Top1", detail: "成为收入Top1功能" }
+        { label: "功能渗透率", value: "9%→20%", detail: "↑122%" },
+        { label: "保存率", value: "45%→55%", detail: "↑22%" },
+        { label: "收入", value: "900万→2566万", detail: "↑185%" },
+        { label: "排名", value: "Top1", detail: "收入Top1功能" }
       ],
       summary: "验证「高频刚需工具从体验优化→用户增长→商业放大」的全链路打法，沉淀可复制的工具型产品增长变现方法论。",
       tags: ["市场与用户研究", "学习能力", "产品设计"],
@@ -79,8 +79,8 @@ const CoreAchievements: React.FC = () => {
         }
       ],
       results: [
-        { label: "DAU", value: "↑37%", detail: "" },
-        { label: "收入", value: "↑75%", detail: "25年环比24年" }
+        { label: "DAU", value: "5.1万→7万", detail: "↑37%" },
+        { label: "收入", value: "380万→625万", detail: "+65%" }
       ],
       summary: "把前两个项目沉淀的方法论完整复用在新的业务场景，实现从「学会做事」→「沉淀方法」→「复制放大价值」的闭环。",
       tags: ["产品规划", "营销市场", "商业化模式"],
@@ -158,9 +158,9 @@ const CoreAchievements: React.FC = () => {
               transition={{ delay: index * 0.15, duration: 0.6 }}
               viewport={{ once: true }}
             >
-              {/* 标题区域 */}
-              <div className="bg-gradient-to-r from-orange-500 to-pink-500 px-8 py-6">
-                <h3 className="text-2xl md:text-3xl font-bold text-white">
+              {/* 标题区域 - 纯白背景 + 彩色提示线 */}
+              <div className="bg-white px-8 py-6 border-b-2 border-black border-l-8 border-l-[#FF3B30]">
+                <h3 className="text-2xl md:text-3xl font-bold text-black">
                   {achievement.title}
                 </h3>
               </div>
@@ -190,7 +190,7 @@ const CoreAchievements: React.FC = () => {
                       {achievement.results.map((result, idx) => (
                         <div key={idx} className="border border-gray-900 rounded-md p-2 text-center">
                           <div className="text-base font-bold text-red-600" style={{ whiteSpace: 'nowrap' }}>{result.value}</div>
-                          <div className="text-xs font-medium text-gray-700">{result.label}</div>
+                          <div className="text-xs font-medium text-gray-700" style={{ whiteSpace: 'nowrap' }}>{result.label}</div>
                           {result.detail && (
                             <div className="text-xs text-gray-600 mt-0.5" style={{ whiteSpace: 'nowrap' }}>{result.detail}</div>
                           )}
