@@ -5,14 +5,14 @@ const FuturePlans: React.FC = () => {
   const workPlans = [
     {
       period: "短期规划（1年内）",
-      title: "技术深耕 + 价值放大",
-      action: "结合Agent、OpenClaw前沿技术，升级AI消除、批处理两大王牌功能",
-      target: "AI消除、批处理DAU相关收入增长30%+",
+      title: "技术深耕 + 持续升级",
+      action: "结合Agent、OpenClaw等前沿技术，升级AI消除、批处理两大王牌功能",
+      target: "AI消除、批处理DAU、收入增长30%+",
       path: "联动算法、生态团队小步快跑"
     },
     {
       period: "中长期规划（1-3年）",
-      title: "复制经验，放大价值",
+      title: "复用经验，放大价值",
       actions: [
         "复制两大功能方法论，带动PC端更多工具功能增长",
         "深耕PC端独有场景优势，打造差异化功能体验",
@@ -22,9 +22,8 @@ const FuturePlans: React.FC = () => {
   ];
 
   const personalPlans = [
-    "深耕前沿 AI 技术认知，提升技术落地转化能力",
-    "强化方法论沉淀、知识传承与团队赋能能力",
-    "深化 PC 端细分场景洞察，打造差异化产品能力"
+    "通过学习更多商业分析报告、战略分析方法，提升全局产品规划与战略思考能力",
+    "通过啃透行业趋势、与用户聊更多真实需求，希望能做引领行业潮流的产品"
   ];
 
   return (
