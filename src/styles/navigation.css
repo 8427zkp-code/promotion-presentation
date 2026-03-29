@@ -1,0 +1,91 @@
+/* 导航栏样式增强 */
+.nav-container {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 251, 235, 0.95);
+}
+
+/* 滚动偏移补偿 */
+.scroll-offset {
+  scroll-margin-top: 80px;
+}
+
+/* 平滑滚动全局样式 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 移动端菜单动画 */
+.mobile-menu-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.mobile-menu-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+/* 导航项悬停动画 */
+.nav-button {
+  transition: all 0.2s ease;
+  transform: translateY(0);
+}
+
+.nav-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px #000;
+}
+
+.nav-button:active {
+  transform: translateY(0);
+  box-shadow: 2px 2px 0px #000;
+}
+
+/* 激活状态样式 */
+.nav-active {
+  position: relative;
+}
+
+.nav-active::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 3px;
+  background-color: #000;
+  border-radius: 2px;
+}
+
+/* 响应式样式 */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0.75rem 1rem;
+  }
+
+  .nav-button {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* 高对比模式支持 */
+@media (prefers-contrast: high) {
+  .nav-container {
+    background-color: #fff;
+    border-color: #000;
+  }
+}
+
+/* 减少动画偏好支持 */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
