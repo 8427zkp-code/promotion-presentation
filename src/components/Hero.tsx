@@ -87,7 +87,7 @@ const Hero: React.FC = () => {
                       transition={{ duration: 0.2 }}
                     >
                       <h3 className="font-bold text-gray-900 mb-1 text-sm">个人荣誉:</h3>
-                      <p className="text-gray-700 text-xs">2025年"智能消除"优秀项目代表</p>
+                      <p className="text-gray-700 text-xs">2024年"智能消除"优秀项目代表</p>
                       <p className="text-gray-700 text-xs">2022年"攻坚突破"优秀个人</p>
                     </motion.div>
                   </div>

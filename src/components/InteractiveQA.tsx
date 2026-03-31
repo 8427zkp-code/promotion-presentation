@@ -6,7 +6,7 @@ const InteractiveQA: React.FC = () => {
     {
       icon: "🙋‍♀️",
       title: "问题一",
-      content: "请教各位老师，在打造驱动增长的产品或功能有什么宝贵的经验吗？"
+      content: "请教各位老师，能分享打造驱动增长的产品或功能的宝贵经验吗？"
     },
     {
       icon: "💡",
