@@ -128,7 +128,7 @@ const CoreAchievements: React.FC = () => {
             我的成长曲线
             <div className="absolute -bottom-2 left-0 right-0 h-2 bg-orange-500 -z-10 transform skew-x-12"></div>
           </h2>
-          <p className="text-xl text-gray-600 mt-4 font-medium">一个全盘筑基 → 单点深耕 → 价值放大的故事</p>
+          <p className="text-xl text-gray-600 mt-4 font-medium">找定位 → 找亮点 → 放大亮点</p>
         </motion.div>
 
         {/* 【修改3】项目卡片之间的间距缩小 */}

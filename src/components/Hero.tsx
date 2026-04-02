@@ -72,7 +72,7 @@ const Hero: React.FC = () => {
                       transition={{ duration: 0.2 }}
                     >
                       <h3 className="font-bold text-gray-900 mb-1 text-sm">最近绩效:</h3>
-                      <p className="text-gray-700 text-xs">2025年 B+、2024年 B+、2023年 B+</p>
+                      <p className="text-gray-700 text-xs">2025年 H1 B+、2025年 H2 B+、2025年 B+</p>
                     </motion.div>
                     {/* 荣誉框 - 【修改】hover回正，移开自动恢复倾斜 */}
                     <motion.div

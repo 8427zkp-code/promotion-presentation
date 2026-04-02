@@ -2,31 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-/* -------------------------------------------------------------------------- */
-/* 1. 核心幻灯片切屏逻辑 (Scroll Snapping)                                    */
-/* -------------------------------------------------------------------------- */
 html {
-  /* 开启 Y 轴强制滚动吸附 */
+  /* 开启全局强制纵向吸附 */
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  /* 预留出顶部 Navbar 的高度，防止切屏后内容被导航栏遮挡 */
-  scroll-padding-top: 70px; 
 }
 
-/* 让所有的 section 作为切屏的吸附点 */
-section {
+/* 专门针对首屏：严禁上方留白，必须绝对吸附到0px顶部 */
+.snap-hero {
   scroll-snap-align: start;
-  scroll-snap-stop: always; /* 滑动一次只切一屏，防止用力过猛滑过头 */
+  scroll-snap-stop: always;
+  scroll-margin-top: 0px; 
 }
 
-/* -------------------------------------------------------------------------- */
-/* 2. 多巴胺风格可爱鼠标光标 (已保留并优化)                                    */
-/* -------------------------------------------------------------------------- */
+/* 通用吸附点：严禁标题下移空出一大截，只留出正好容纳导航栏的 80px */
+.snap-point {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  scroll-margin-top: 80px; 
+}
+
 body {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23FF1493" stroke="black" stroke-width="2"><path d="M12 2L15 9h8l-6 5 2 8-7-6-7 6 2-8-6-5h8z"/></svg>') 12 12, auto;
 }
 
-/* 可点击元素的悬浮态小手 */
 a, button, [role="button"], img, .cursor-pointer {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="%2300E5FF" stroke="black" stroke-width="2"><path d="M9 11.24V7.5C9 6.12 10.12 5 11.5 5S14 6.12 14 7.5v3.74c1.21-.81 2-2.18 2-3.74C16 4.46 13.54 2 10.5 2S5 4.46 5 7.5c0 1.56.79 2.93 2 3.74zm9.84 4.63l-4.54-2.26c-.17-.07-.35-.11-.54-.11H13v-6c0-.83-.67-1.5-1.5-1.5S10 6.67 10 7.5v10.74l-3.43-.72c-.08-.01-.15-.03-.24-.03-.31 0-.59.13-.79.33l-.79.8 4.94 4.94c.27.27.65.44 1.06.44h6.79c.75 0 1.33-.55 1.44-1.28l.75-5.27c.01-.07.02-.14.02-.2 0-.62-.38-1.16-.91-1.38z"/></svg>') 10 10, pointer !important;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23FF1493" stroke="black" stroke-width="2"><path d="M12 2L15 9h8l-6 5 2 8-7-6-7 6 2-8-6-5h8z"/></svg>') 12 12, pointer !important;
 }

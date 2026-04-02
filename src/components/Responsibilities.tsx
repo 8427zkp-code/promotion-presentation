@@ -10,14 +10,14 @@ const Responsibilities: React.FC = () => {
       icon: "💻"
     },
     {
-      title: "【业务增收守门员・跨部门协同粘合剂】",
-      content: "洞察市场产品的营销与商业化策略，理解技术边界与成本逻辑，联动开发、商业化、渠道、运营等同学，为 PC 端营收目标达成保驾护航。",
+      title: "【跨部门协同粘合剂・业务增收守门员】",
+      content: "学习市场营销、商业化策略与技术，联动开发、商业化、渠道、运营等同学，为 PC 端营收目标达成保驾护航。",
       tags: ["技术知识", "项目管理", "营销市场", "商业化模式", "团队合作"],
       icon: "💰"
     },
     {
-      title: "【持续更新认知・不断沉淀方法】",
-      content: "学习最新方法与技术，为用户提供新服务；沉淀可复用的流程与经验，和团队共同成长。",
+      title: "【持续学习更新认知・不断尝试积累经验】",
+      content: "学习前沿技术与行业趋势，更新产品认知，多方向尝试，沉淀可复用的产品方法论。",
       tags: ["学习能力", "方法论建设", "知识传承"],
       icon: "🔄"
     },
@@ -52,9 +52,10 @@ const Responsibilities: React.FC = () => {
           {responsibilities.map((item, index) => (
             <motion.div
               key={index}
-              className="bg-white dopamine-card p-6"
+              className="bg-white dopamine-card p-6 rounded-2xl relative z-0 hover:z-10"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.02, transition: { duration: 0 } }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
             >
