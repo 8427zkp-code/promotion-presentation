@@ -112,11 +112,7 @@ const FuturePlans: React.FC = () => {
                     </p>
                   )}
 
-                  {plan.path && (
-                    <p className="text-gray-800 text-sm font-medium">
-                      <span className="font-black" style={{ color: plan.theme.main }}>执行路径：</span> {plan.path}
-                    </p>
-                  )}
+                  {/* 这里我直接删掉了不存在的 plan.path 代码块 */}
 
                   {plan.actions && (
                     <div className="space-y-2">
