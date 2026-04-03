@@ -6,12 +6,12 @@ const InteractiveQA: React.FC = () => {
     {
       icon: "🙋‍♀️",
       title: "问题一",
-      content: "我个人全局思考的能力不足，大概源于我会随时迸发新想法，有想法就急切想方案落地，经常会过早陷入方案细节里，把时间都花在完善细节上，而脱离了想法的初衷，想请教老师们有什么建议吗？"
+      content: "我个人全局思考的能力不足，大概源于我会随时迸发新想法，有想法就急切想方案落地，过早陷入方案细节里，做着做着就脱离了想法的初衷，想请教老师们有什么建议吗？"
     },
     {
       icon: "💡",
       title: "问题二",
-      content: "读史能明智，这次我准备时复盘了很多事，无数次拍大腿感叹当时为什么没想到，比如22年PC秀秀重构时就发现用户需要高效批量的工具，但没有深挖批量，到24年常看消除记录才洞察到，好像总会存在这种机会点才能动起来，大家关于如何把握住机会点有什么建议吗？"
+      content: "读史能明智，这次准备时复盘了很多事，无数次拍大腿感叹当时怎么没想到，比如22年PC秀秀重构时就发现用户需要高效批量的工具，但没有深挖批量，到24年常看消除记录才洞察到，好像总会存在这种机会点才能动起来，大家关于如何把握住机会点有什么建议吗？"
     }
   ];
 
@@ -33,16 +33,17 @@ const InteractiveQA: React.FC = () => {
               </span>
             </span>
           </h2>
-          <p className="text-xl text-gray-600 transform rotate-1">开心做产品，在线蹲老师们的升级指南~</p>
+          <p className="text-xl text-gray-600 transform rotate-1">开心做产品，在线蹲指南~</p>
         </motion.div>
 
         <div className="space-y-6">
           {questions.map((question, index) => (
             <motion.div
               key={index}
-              className="bg-white dopamine-card p-6"
+              className="bg-white dopamine-card p-6 rounded-2xl shadow-sm"
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50, rotate: index % 2 === 0 ? -2 : 2 }}
               whileInView={{ opacity: 1, x: 0, rotate: index % 2 === 0 ? -1 : 1 }}
+              whileHover={{ scale: 1.02, rotate: 0, transition: { duration: 0.2 } }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.15 }}
             >

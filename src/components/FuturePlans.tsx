@@ -6,10 +6,9 @@ const FuturePlans: React.FC = () => {
   const workPlans = [
     {
       period: "短期规划（1年内）",
-      title: "技术深耕 + 持续升级",
-      action: "结合Agent、OpenClaw等前沿技术，升级AI消除、批处理两大王牌功能",
+      title: "深耕功能 + 持续升级",
+      action: "联动算法，探索Agent、OpenClaw等前沿技术，升级AI消除、批处理两大王牌功能",
       target: "AI消除、批处理DAU&收入增长", // 已按要求修改，不标色
-      path: "联动算法、生态团队小步快跑",
       // 多巴胺主题色：活力橙
       theme: {
         main: "#ff5c00",
@@ -22,9 +21,9 @@ const FuturePlans: React.FC = () => {
       period: "中长期规划（1-3年）",
       title: "复用经验，放大价值",
       actions: [
-        "复制两大功能方法论，带动PC端更多工具功能增长",
-        "深耕PC端独有场景优势，打造差异化功能体验",
-        "沉淀工具型产品迭代方法论，团队内部分享复用"
+        "复用沉淀的方法论，带动PC端更多工具增长",
+        "洞察PC端独有优势，打造差异化的场景体验",
+        "继续打怪升级攒经验，团队内部分享复用"
       ],
       // 多巴胺主题色：清爽蓝（和短期规划撞色区分）
       theme: {
@@ -39,10 +38,10 @@ const FuturePlans: React.FC = () => {
   // 个人发展计划：甜酷粉多巴胺主题，和工作计划颜色完全区分
   const personalPlans = [
     <>
-      <span className="text-pink-600 font-bold">产品洞察力/前瞻性、产品全局规划能力</span> 不足，计划通过学习更多商业分析报告、战略分析方法，来提升全局产品规划与战略思考能力
+      <span className="text-pink-600 font-bold">产品全局思考能力</span> 不足，希望通过学习更多方法论、战略分析策略，探索一套合适的思考方式来提升。
     </>,
     <>
-      <span className="text-pink-600 font-bold">行业深层需求</span> 还没挖透，计划通过深度跟进行业趋势、开展用户深度访谈，挖掘用户真实需求，做核心行业的效率、赚钱工具，产品驱动增长
+      <span className="text-pink-600 font-bold">行业全链路深层需求</span> 还没挖透，计划通过深度跟进行业趋势、开展用户深度访谈，挖掘用户真实需求，做核心行业的效率、赚钱工具，产品驱动增长
     </>
   ];
 
