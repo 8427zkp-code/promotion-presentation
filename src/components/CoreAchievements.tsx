@@ -186,7 +186,7 @@ const GrowthCurve = () => {
         <div className="bg-green-50 border-2 border-green-200 p-5 rounded-2xl mb-6 shadow-sm">
           <p className="text-sm text-green-800 font-medium">
             <span className="font-bold text-green-600 bg-white px-2 py-1 rounded-md mr-2">● 我的收获</span>
-            作为核心执行，前期为bossr们提供数据、问卷调研帮助决策；后期跟进方案落地并收集新版反馈快速迭代。更学到了「匹配核心人群的产品定位+聚焦高频功能」能驱动产品增长的经验。
+            作为核心执行，前期为boss们提供数据、问卷调研帮助决策；后期跟进方案落地并收集新版反馈快速迭代。更学到了「匹配核心人群的产品定位+聚焦高频功能」能驱动产品增长的经验。
           </p>
         </div>
         <div className="flex flex-wrap gap-3">
