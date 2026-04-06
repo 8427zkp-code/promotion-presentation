@@ -16,7 +16,7 @@ const InteractiveQA: React.FC = () => {
   ];
 
   return (
-    <section className="min-h-screen px-6 py-20">
+    <section className="px-6 pt-8 pb-20"> {/* 调整顶部内边距 */}
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -25,7 +25,7 @@ const InteractiveQA: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 scroll-mt-20"> {/* 添加滚动偏移 */}
             <span className="relative inline-block transform -rotate-1">
               <span className="relative">
                 互动交流
@@ -58,13 +58,7 @@ const InteractiveQA: React.FC = () => {
           ))}
         </div>
 
-        <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          viewport={{ once: true }}
-        >
+        <motion.div className="text-center mt-16" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.8, duration: 0.6 }} viewport={{ once: true }}>
           <p className="text-2xl text-orange-600 font-semibold transform -rotate-1">
             感谢各位老师的聆听！一起加油呀
           </p>

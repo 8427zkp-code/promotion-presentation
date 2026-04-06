@@ -135,11 +135,13 @@ const GrowthCurve = () => {
             <p className="text-gray-500 mt-2 text-center text-sm">重点迭代人像美容、C端贴纸素材<br />框架老旧、功能散似满天星</p>
           </div>
 
-          {/* 中间区域：黄色框 + 向下箭头，垂直居中（justify-center） */}
+          {/* 中间区域：黄色框 + 向下箭头，垂直居中 */}
           <div className="flex-[1.2] flex flex-col items-center justify-center relative px-2 py-4 gap-3">
-            {/* 黄色用户洞察卡片 */}
-            <div className="bg-yellow-50 border-2 border-yellow-300 p-5 rounded-2xl text-sm text-yellow-800 text-center shadow-[4px_4px_0_0_rgba(253,224,71,0.8)] z-10 font-medium leading-relaxed">
-              发现PC用户工作时间活跃，假日DAU下降；<br />人像美容渗透率不到5%，和秀秀App相反；<br />投放问卷，进一步确认PC是电商办公用户。
+            {/* 黄色用户洞察卡片 - 修改为左对齐并添加符号 */}
+            <div className="bg-yellow-50 border-2 border-yellow-300 p-5 rounded-2xl text-sm text-yellow-800 text-left shadow-[4px_4px_0_0_rgba(253,224,71,0.8)] z-10 font-medium leading-relaxed flex flex-col gap-1">
+              <div>• 发现PC秀秀用户在工作时间活跃，节假日DAU下降；</div>
+              <div>• 高频功能是消除、抠图、裁剪，而重点突出的人像美容渗透率不到5%；</div>
+              <div>• 投放问卷，进一步确认PC是电商办公用户，核心需求是高效做电商图。</div>
             </div>
             {/* 向下箭头 */}
             <div className="text-yellow-400 font-black text-4xl drop-shadow-md">➔</div>
@@ -152,7 +154,7 @@ const GrowthCurve = () => {
               <ZoomableImage src="/new.png" alt="7.0新版" className="object-contain w-full h-full" />
             </div>
             <p className="text-2xl font-bold text-blue-700">PC电商办公工具</p>
-            <p className="text-blue-500/80 mt-2 text-center text-sm">重构入口，聚焦消除、抠图等核心能力<br />上线电商爆炸贴等商用素材</p>
+            <p className="text-blue-500/80 mt-2 text-center text-sm">重构入口，聚焦消除、抠图等核心能力<br />上线海报设计模板化制作电商图片<br />上线电商爆炸贴等商用素材</p>
           </div>
         </div>
 
@@ -224,7 +226,7 @@ const GrowthCurve = () => {
             </div>
           </div>
           <div className="w-full bg-pink-100 border-2 border-pink-300 rounded-2xl p-5 shadow-sm text-center">
-            <div className="text-pink-700 font-bold text-lg mb-2">✨ 核心策略</div>
+            <div className="text-pink-700 font-bold text-lg mb-2">✨ 制定核心策略</div>
             <p className="text-pink-800 font-bold leading-relaxed">先后接入了GAN算法、GAN+SD融合的生成式算法优化消除后的填充效果。上线「自动去水印、文字、LOGO」，并全路径曝光引导用户使用效果更好的AI消除。</p>
           </div>
         </div>

@@ -10,13 +10,14 @@ interface NavItem {
 const Navigation: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('about');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // 【新增】滚动状态控制
   const [scrolled, setScrolled] = useState(false);
 
+  // ✨ 在 achievements 和 future 之间插入 impact 项
   const navItems: NavItem[] = [
     { label: '关于我', targetId: 'about', shortLabel: '关于' },
     { label: '工作职责与目标', targetId: 'responsibilities', shortLabel: '职责' },
     { label: '主要工作成果', targetId: 'achievements', shortLabel: '成果' },
+    { label: '组织影响力', targetId: 'impact', shortLabel: '影响力' }, // 新增
     { label: '未来规划', targetId: 'future', shortLabel: '规划' },
     { label: '互动交流', targetId: 'interactive', shortLabel: '互动' }
   ];
@@ -36,9 +37,7 @@ const Navigation: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // 【新增】监听滚动距离，控制遮罩显示
       setScrolled(window.scrollY > 50);
-
       const scrollPosition = window.scrollY + 120;
       for (const item of navItems) {
         const element = document.getElementById(item.targetId);
@@ -58,7 +57,15 @@ const Navigation: React.FC = () => {
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.altKey) {
-        const map: Record<string, string> = { '1': 'about', '2': 'responsibilities', '3': 'achievements', '4': 'future', '5': 'interactive' };
+        // ✨ 更新快捷键映射，支持 1~6
+        const map: Record<string, string> = {
+          '1': 'about',
+          '2': 'responsibilities',
+          '3': 'achievements',
+          '4': 'impact',
+          '5': 'future',
+          '6': 'interactive'
+        };
         if (map[e.key]) {
           e.preventDefault();
           scrollToSection(map[e.key]);
@@ -71,14 +78,12 @@ const Navigation: React.FC = () => {
 
   return (
     <>
-      {/* 占位高度保持不变 */}
       <div className="h-16" />
-      {/* 【修改】header根据滚动状态变化背景 */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? 'bg-white/80 backdrop-blur-md shadow-sm' : 'bg-transparent'
       }`}>
         <nav className="px-4 py-2">
-          {/* 桌面端 - 【修改】胶囊外框样式，保留所有原有逻辑 */}
+          {/* 桌面端 */}
           <div className="hidden md:flex items-center justify-center">
             <div className="flex items-center gap-3 lg:gap-4">
               {navItems.map((item) => (
@@ -87,10 +92,10 @@ const Navigation: React.FC = () => {
                   onClick={() => scrollToSection(item.targetId)}
                   className={`px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 border-2 ${
                     activeSection === item.targetId
-                      ? 'bg-[#FF1493] text-white border-[#FF1493] shadow-md' // 激活项：粉色胶囊底色
+                      ? 'bg-[#FF1493] text-white border-[#FF1493] shadow-md'
                       : scrolled
-                      ? 'bg-transparent text-gray-700 border-gray-300 hover:border-[#FF1493] hover:text-[#FF1493]' // 下滑时：透明底+灰边框
-                      : 'bg-transparent text-gray-800 border-transparent hover:border-gray-300' // 首屏时：完全透明
+                      ? 'bg-transparent text-gray-700 border-gray-300 hover:border-[#FF1493] hover:text-[#FF1493]'
+                      : 'bg-transparent text-gray-800 border-transparent hover:border-gray-300'
                   }`}
                 >
                   {item.label}
@@ -99,12 +104,12 @@ const Navigation: React.FC = () => {
             </div>
           </div>
 
-          {/* 移动端保持完全不变 */}
+          {/* 移动端 */}
           <div className="md:hidden">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="w-full flex items-center justify-between px-3 py-2 bg-white border-2 border-black rounded-lg shadow-[2px_2px_0_#000]">
               <div className="flex items-center gap-2">
                 <span className="font-bold text-sm">{navItems.find(item => item.targetId === activeSection)?.shortLabel || '导航'}</span>
-                <span className="text-xs text-gray-600">Alt+1-5快速跳转</span>
+                <span className="text-xs text-gray-600">Alt+1-6快速跳转</span>
               </div>
               <div className={`w-5 h-5 flex flex-col justify-center items-center transition-transform duration-200 ${isMenuOpen ? 'rotate-180' : ''}`}>
                 <div className="w-full h-0.5 bg-black mb-1" /><div className="w-full h-0.5 bg-black mb-1" /><div className="w-full h-0.5 bg-black" />

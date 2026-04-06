@@ -2,20 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const FuturePlans: React.FC = () => {
-  // 工作计划：双主题色多巴胺区分，已修改目标文本
   const workPlans = [
     {
       period: "短期规划（1年内）",
       title: "深耕功能 + 持续升级",
       action: "联动算法，探索Agent、OpenClaw等前沿技术，升级AI消除、批处理两大王牌功能",
-      target: "AI消除、批处理DAU&收入增长", // 已按要求修改，不标色
-      // 多巴胺主题色：活力橙
-      theme: {
-        main: "#ff5c00",
-        bg: "#fff5e6",
-        border: "#ff5c00",
-        dot: "#ff5c00"
-      }
+      target: "AI消除、批处理DAU&收入增长",
+      theme: { main: "#ff5c00", bg: "#fff5e6", border: "#ff5c00", dot: "#ff5c00" }
     },
     {
       period: "中长期规划（1-3年）",
@@ -25,17 +18,10 @@ const FuturePlans: React.FC = () => {
         "洞察PC端独有优势，打造差异化的场景体验",
         "继续打怪升级攒经验，团队内部分享复用"
       ],
-      // 多巴胺主题色：清爽蓝（和短期规划撞色区分）
-      theme: {
-        main: "#0088ff",
-        bg: "#e6f4ff",
-        border: "#0088ff",
-        dot: "#0088ff"
-      }
+      theme: { main: "#0088ff", bg: "#e6f4ff", border: "#0088ff", dot: "#0088ff" }
     }
   ];
 
-  // 个人发展计划：甜酷粉多巴胺主题，和工作计划颜色完全区分
   const personalPlans = [
     <>
       <span className="text-pink-600 font-bold">产品全局思考能力</span> 不足，希望通过学习更多方法论、战略分析策略，探索一套合适的思考方式来提升。
@@ -46,9 +32,8 @@ const FuturePlans: React.FC = () => {
   ];
 
   return (
-    <section className="min-h-screen px-6 py-20 bg-[#fffbe8]">
+    <section className="px-6 pt-8 pb-20 bg-[#fffbe8]"> {/* 调整顶部内边距 */}
       <div className="max-w-6xl mx-auto">
-        {/* 顶部大标题：多巴胺加粗下划线 */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,7 +41,7 @@ const FuturePlans: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-4 text-gray-900">
+          <h2 className="text-4xl md:text-5xl font-black mb-4 text-gray-900 scroll-mt-20"> {/* 添加滚动偏移 */}
             <span className="relative inline-block">
               未来规划
               <div className="absolute -bottom-2 left-0 right-0 h-2 bg-orange-500 -z-10 transform skew-x-12"></div>
@@ -66,14 +51,8 @@ const FuturePlans: React.FC = () => {
         </motion.div>
 
         <div className="max-w-5xl mx-auto">
-          {/* 工作计划区域：多巴胺双撞色卡片 */}
-          <motion.div
-            className="mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          {/* 工作计划区域 */}
+          <motion.div className="mb-16" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
             <h3 className="text-2xl md:text-3xl font-black mb-10 text-center">
               <span className="relative inline-block transform -rotate-1">
                 <span className="relative text-gray-900">
@@ -82,38 +61,14 @@ const FuturePlans: React.FC = () => {
                 </span>
               </span>
             </h3>
-
             <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {workPlans.map((plan, index) => (
-                <motion.div
-                  key={index}
-                  className={`p-6 rounded-2xl border-[4px] border-black shadow-[6px_6px_0px_#000] transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[8px_8px_0px_#000]`}
-                  style={{ backgroundColor: plan.theme.bg }}
-                  initial={{ opacity: 0, y: 30, rotate: index % 2 === 0 ? -2 : 2 }}
-                  whileInView={{ opacity: 1, y: 0, rotate: index % 2 === 0 ? -1 : 1 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}
-                  whileHover={{ scale: 1.02 }}
-                >
+                <motion.div key={index} className={`p-6 rounded-2xl border-[4px] border-black shadow-[6px_6px_0px_#000] transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[8px_8px_0px_#000]`} style={{ backgroundColor: plan.theme.bg }} initial={{ opacity: 0, y: 30, rotate: index % 2 === 0 ? -2 : 2 }} whileInView={{ opacity: 1, y: 0, rotate: index % 2 === 0 ? -1 : 1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }} whileHover={{ scale: 1.02 }}>
                   <h4 className="text-lg font-black mb-4" style={{ color: plan.theme.main }}>
                     {plan.period.replace('（1年内）', '：').replace('（1-3年）', '：')}{plan.title}
                   </h4>
-
-                  {plan.action && (
-                    <p className="text-gray-800 mb-3 text-sm font-medium">
-                      <span className="font-black" style={{ color: plan.theme.main }}>核心动作：</span> {plan.action}
-                    </p>
-                  )}
-
-                  {plan.target && (
-                    <p className="text-gray-800 mb-3 text-sm font-medium">
-                      <span className="font-black" style={{ color: plan.theme.main }}>落地目标：</span>
-                      <span className="font-normal text-gray-900"> {plan.target}</span>
-                    </p>
-                  )}
-
-                  {/* 这里我直接删掉了不存在的 plan.path 代码块 */}
-
+                  {plan.action && <p className="text-gray-800 mb-3 text-sm font-medium"><span className="font-black" style={{ color: plan.theme.main }}>核心动作：</span> {plan.action}</p>}
+                  {plan.target && <p className="text-gray-800 mb-3 text-sm font-medium"><span className="font-black" style={{ color: plan.theme.main }}>落地目标：</span><span className="font-normal text-gray-900"> {plan.target}</span></p>}
                   {plan.actions && (
                     <div className="space-y-2">
                       {plan.actions.map((action, idx) => (
@@ -129,13 +84,8 @@ const FuturePlans: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* 个人发展计划：甜酷粉多巴胺主题 */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          {/* 个人发展计划 */}
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
             <h3 className="text-2xl md:text-3xl font-black mb-10 text-center">
               <span className="relative inline-block transform rotate-1">
                 <span className="relative text-gray-900">
@@ -144,16 +94,8 @@ const FuturePlans: React.FC = () => {
                 </span>
               </span>
             </h3>
-
             <div className="max-w-3xl mx-auto">
-              <motion.div
-                className="bg-[#ffeef6] rounded-2xl border-[4px] border-black shadow-[6px_6px_0px_#000] p-6 md:p-8 transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[8px_8px_0px_#000]"
-                initial={{ opacity: 0, y: 30, rotate: 1 }}
-                whileInView={{ opacity: 1, y: 0, rotate: -1 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                whileHover={{ scale: 1.02 }}
-              >
+              <motion.div className="bg-[#ffeef6] rounded-2xl border-[4px] border-black shadow-[6px_6px_0px_#000] p-6 md:p-8 transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[8px_8px_0px_#000]" initial={{ opacity: 0, y: 30, rotate: 1 }} whileInView={{ opacity: 1, y: 0, rotate: -1 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, ease: "easeOut" }} whileHover={{ scale: 1.02 }}>
                 <div className="space-y-4">
                   {personalPlans.map((plan, idx) => (
                     <div key={idx} className="flex items-start gap-3">

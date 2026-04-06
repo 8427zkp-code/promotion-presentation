@@ -14,23 +14,11 @@ const Responsibilities: React.FC = () => {
       content: "学习市场营销、商业化策略与技术，联动开发、商业化、渠道、运营等同学，为 PC 端营收目标达成保驾护航。",
       tags: ["技术知识", "项目管理", "营销市场", "商业化模式", "团队合作"],
       icon: "💰"
-    },
-    {
-      title: "【持续学习更新认知・不断尝试积累经验】",
-      content: "学习前沿技术与行业趋势，更新产品认知，多方向尝试，沉淀可复用的产品方法论。",
-      tags: ["学习能力", "方法论建设", "知识传承"],
-      icon: "🔄"
-    },
-    {
-      title: "【积极分享观点・助力团队升级】",
-      content: "把自己攒的方法、踩坑经验，主动分享给小伙伴，互相补位、一起进步，帮团队一起变厉害。",
-      tags: ["沟通能力", "知识传承", "培养指导", "团队合作"],
-      icon: "🤝"
     }
   ];
 
   return (
-    <section className="min-h-screen px-6 py-20">
+    <section className="px-6 pt-8 pb-20"> {/* 调整顶部内边距 */}
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -39,7 +27,7 @@ const Responsibilities: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 scroll-mt-20"> {/* 添加滚动偏移 */}
             <span className="relative">
               工作职责与目标
               <div className="absolute -bottom-2 left-0 right-0 h-1 bg-orange-500"></div>
