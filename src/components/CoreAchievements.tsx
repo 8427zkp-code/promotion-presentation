@@ -32,8 +32,8 @@ const getTooltipContent = (label: string): React.ReactNode => {
           <div className="flex items-start gap-1 mb-1">⚡ 而当时的纯SD扩散性生成在文字和水印场景容易“不消反生”，成本高了25倍（GAN消除 ￥0.0006/次→SD消除￥0.02/次），耗时多了9s（3s→12s），不适合PC“快”的需求。</div>
           <div className="flex items-start gap-1 flex-col">
             <div>💡 所以我们用了一些小窍门：</div>
-            <div className="ml-4">✨先用GAN消除原内容再用SD生成还原，降低「不消反生」的概率；</div>
-            <div className="ml-4">✨再算法侧优化资源+产品侧细分场景匹配最佳算法，降低成本和耗时。（通过给用户记录打标，发现PC有32%的简单场景可以用GAN算法，其他用GAN+SD融合的生成式算法，这样成本降了10倍（￥0.02/次→￥0.002/次）和耗时降了一半多（12s→5s））</div>
+            <div className="ml-4">✨用GAN消除原内容再用SD生成还原，降低「不消反生」的概率；</div>
+            <div className="ml-4">✨算法侧优化资源+产品侧细分场景匹配最佳算法，降低成本和耗时。（通过给用户记录打标，发现PC有32%的简单场景可以用GAN算法，其他用GAN+SD融合的生成式算法，这样成本降了10倍（￥0.02/次→￥0.002/次）和耗时降了一半多（12s→5s），这个细分场景匹配最佳算法的策略也成为今年实验室迭代消除的重点方向）</div>
           </div>
         </>
       );
@@ -171,7 +171,7 @@ const GrowthCurve = () => {
             </ZoomableCard>
             <ZoomableCard className="bg-white border-2 border-red-100 rounded-2xl p-4 flex flex-col items-center justify-center shadow-sm">
               <p className="text-red-500 font-black text-3xl mb-1">↑51%</p>
-              <p className="text-gray-500 text-xs font-medium">次月留存: 30.53% → 46.23%</p>
+              <p className="text-gray-500 text-xs font-medium">次日留存: 30.53% → 46.23%</p>
             </ZoomableCard>
             <ZoomableCard className="bg-white border-2 border-red-100 rounded-2xl p-4 flex flex-col items-center justify-center shadow-sm">
               <p className="text-red-500 font-black text-3xl mb-1">↑121%</p>
@@ -213,7 +213,7 @@ const GrowthCurve = () => {
           <div className="flex flex-col md:flex-row gap-6 w-full">
             <div className="flex-1 bg-white border-2 border-pink-200 rounded-2xl p-5 shadow-sm text-center">
               <div className="text-pink-500 font-bold text-lg mb-2">📊 洞察用户需求</div>
-              <p className="text-gray-700 font-medium leading-relaxed">端内消除渗透率11%，电商用户存在「扒图去LOGO、去牛皮癣、改文字」、去除AI平台水印的高频需求。</p>
+              <p className="text-gray-700 font-medium leading-relaxed">核心电商用户每天都需要「扒图去LOGO、去牛皮癣、改文字」、去除AI平台水印，消除是端内渗透率top1功能。</p>
             </div>
             <div className="flex-1 bg-white border-2 border-pink-200 rounded-2xl p-5 shadow-sm text-center">
               <div className="text-pink-500 font-bold text-lg mb-2">⚠️ 现有方案局限</div>
@@ -225,9 +225,19 @@ const GrowthCurve = () => {
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
             </div>
           </div>
-          <div className="w-full bg-pink-100 border-2 border-pink-300 rounded-2xl p-5 shadow-sm text-center">
-            <div className="text-pink-700 font-bold text-lg mb-2">✨ 制定核心策略</div>
-            <p className="text-pink-800 font-bold leading-relaxed">先后接入了GAN算法、GAN+SD融合的生成式算法优化消除后的填充效果。上线「自动去水印、文字、LOGO」，并全路径曝光引导用户使用效果更好的AI消除。</p>
+          {/* ✨ 修改：规划核心策略拆分为两行并加符号 */}
+          <div className="w-full bg-pink-100 border-2 border-pink-300 rounded-2xl p-5 shadow-sm text-left">
+            <div className="text-pink-700 font-bold text-lg mb-2">✨ 规划核心策略</div>
+            <div className="space-y-2 text-pink-800 font-bold leading-relaxed">
+              <p className="flex items-start gap-2">
+                <span className="text-pink-600">•</span>
+                <span>升级消除后的填充算法：通过市场与竞品分析，立项推动实验室研发GAN算法、GAN+SD融合的生成式算法。</span>
+              </p>
+              <p className="flex items-start gap-2">
+                <span className="text-pink-600">•</span>
+                <span>上线自动消除：支持「自动去水印、文字、LOGO」，并在全路径曝光引导用户使用。</span>
+              </p>
+            </div>
           </div>
         </div>
 
@@ -257,7 +267,7 @@ const GrowthCurve = () => {
             </ZoomableCard>
             <ZoomableCard className="border-2 border-red-200 bg-red-50 rounded-2xl p-5 text-center shadow-sm">
               <p className="text-red-500 font-black text-3xl">↑185%</p>
-              <p className="text-red-800/70 font-bold text-sm mt-1">收入：900W → 2566W</p>
+              <p className="text-red-800/70 font-bold text-sm mt-1">全年收入：900W → 2566W</p>
             </ZoomableCard>
           </div>
           <div className="flex-[2] bg-pink-50/50 border-2 border-pink-100 rounded-3xl p-6 flex items-center justify-center w-full shadow-inner h-full min-h-[300px]">
@@ -268,7 +278,7 @@ const GrowthCurve = () => {
         <div className="bg-green-50 border-2 border-green-200 p-5 rounded-2xl mb-6 shadow-sm">
           <p className="text-sm text-green-800 font-medium">
             <span className="font-bold text-green-600 bg-white px-2 py-1 rounded-md mr-2">● 我的收获</span>
-            从7.0的执行、学习到这几年消除主导规划和设计，我也积累了「高频刚需工具→优化路径、效果、耗时→提升用户增长和收入」。
+            从7.0的学习和执行到这几年主导消除的规划和设计，我也积累了「高频刚需工具→优化路径、效果、耗时→提升用户增长和收入」。
           </p>
         </div>
         <div className="flex flex-wrap gap-3">
@@ -288,11 +298,11 @@ const GrowthCurve = () => {
         </h2>
         <div className="flex flex-col md:flex-row gap-6 mb-10">
           <div className="flex-1 bg-white border-2 border-purple-200 rounded-2xl p-5 shadow-sm">
-            <div className="text-purple-500 font-bold text-lg mb-2 text-center">🔍 用户有批量需求</div>
-            <p className="text-gray-700 leading-relaxed text-center">单图消除记录里，好多用户每天消一百张图片以上，且内容重复。单图编辑人均保存PV→11，消除13、变清晰12。</p>
+            <div className="text-purple-500 font-bold text-lg mb-2 text-center">🔍 用户本地的批量需求</div>
+            <p className="text-gray-700 leading-relaxed text-center">线上批处理每天大概有20个用户来处理上万张图，最高一次跑了7.8万张，会放一整晚自动执行。</p>
           </div>
           <div className="flex-1 bg-white border-2 border-purple-200 rounded-2xl p-5 shadow-sm">
-            <div className="text-purple-500 font-bold text-lg mb-2 text-center">🚫 竟不用批处理</div>
+            <div className="text-purple-500 font-bold text-lg mb-2 text-center">🚫 更多用户对批处理</div>
             <p className="text-gray-700 leading-relaxed text-center">不知道<br />不好用<br />没得用</p>
           </div>
           <div className="flex-1 bg-white border-2 border-purple-200 rounded-2xl p-5 shadow-sm">

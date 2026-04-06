@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const OrganizationalImpact: React.FC = () => {
   const impacts = [
     {
-      title: "沉淀经验，赋能团队淀",
+      title: "沉淀经验，赋能团队",
       desc: "将 PC 秀秀 7.0 重构露出高频功能、消除路径优化等经验沉淀为方法论并分享团队。帮助团队在 25 年优化 AI 功能使用路径，助力功能进入 UV",
       highlight: "+76%",
       theme: { bg: "#FFF4CC", border: "#FFB800", text: "#B28000" },
@@ -22,7 +22,7 @@ const OrganizationalImpact: React.FC = () => {
       title: "核心技术，跨业务线复用",
       desc: "推动的 GAN+SD 融合生成式消除方案，解决消除后的马赛克问题，在美图秀秀、美颜相机、WHEE 等",
       highlight: "8个业务",
-      subtext: "复用。",
+      subtext: "复用。“细分场景匹配最佳算法”的策略也成为今年实验室迭代消除的重点方向。",
       theme: { bg: "#F0E6FF", border: "#9900FF", text: "#5C0099" },
       icon: "🔥"
     }
